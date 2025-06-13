@@ -18,6 +18,7 @@
 </head>
 <body>
  <h1 class="header">檔案上傳練習</h1>
+
  <!----建立你的表單及設定編碼----->
 <form action="uploaded_files.php" method="post" enctype="multipart/form-data">
     <label for="file">file:</label>
