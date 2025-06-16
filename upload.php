@@ -18,15 +18,24 @@
 </head>
 <body>
  <h1 class="header">檔案上傳練習</h1>
-
  <!----建立你的表單及設定編碼----->
+
 <form action="uploaded_files.php" method="post" enctype="multipart/form-data">
-    <label for="file">file:</label>
-    <input type="file" name="myfile" id="file" required>
-    <button type="submit">upload</button>
-
+    <label for="name">選擇檔案上傳：</label>
+    <input type="file" name="name" id="name" required>
+    <br>
+    <select name="type" id="type">
+        <option value="image">影像</option>
+        <option value="document">文件</option>
+        <option value="video">影片</option>
+        <option value="music">音樂</option>
+    </select>
+    <br>
+    <textarea name="description" id="description"></textarea>
+    <br>
+    <button type="submit">上傳檔案</button>
 </form>
-
+ 
 
 
 
