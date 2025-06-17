@@ -74,7 +74,7 @@ include_once "db.php";
 <form action="save_upload.php" method="post" enctype="multipart/form-data">
     <?php 
     switch($row['type']) {
-        case 'image':
+        case 'image':               
             echo "<img src='./files/{$row['name']}' alt='檔案預覽' style='max-width: 200px; max-height: 200px;'>";
             break;
         case 'document':

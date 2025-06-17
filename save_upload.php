@@ -12,6 +12,11 @@ if(!empty($_FILES['name']['tmp_name'])){
     $_POST['name']=$name;
 }
 
+//echo $_FILES['name']['tmp_name'];
+//echo $_FILES['name']['name'];
+//echo $name;
+
+
 $type=$_POST['type'];
 $description=$_POST['description'];
 
