@@ -22,10 +22,39 @@
 <body>
 <h1 class="header">文字檔案匯入練習</h1>
 <!---建立檔案上傳機制--->
-
-
+<form action="?" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="file">
+    <input type="submit" value="上傳">
+</form>
 
 <!----讀出匯入完成的資料----->
+<?php
+if(!empty($_FILES['file']['tmp_name'])){
+    move_uploaded_file($_FILES['file']['tmp_name'],'./'.$_FILES['file']['name']);
+    $file=fopen("./".$_FILES['file']['name'],"r") or die("無法開啟檔案");
+    $data=fgetcsv($file);
+    echo "<table id='vote'>";
+    echo "<tr>";
+    foreach ($data as $key => $value) {
+        echo "<th>".$value."</th>";    
+    }
+    echo "</tr>";        
+    while (!feof($file)) {
+      $data=fgetcsv($file);
+      if($data[0]!=""){
+        echo "<tr>";
+        foreach ($data as $key => $value) {
+          echo "<td>".$value."</td>";          
+        }
+        echo "</tr>";
+      }
+   }
+   fclose($file);  
+   echo "</table>";
+}
+
+
+?>
 
 
 
